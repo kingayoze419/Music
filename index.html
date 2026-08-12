@@ -379,7 +379,7 @@
       <audio id="careAudio" src="Care for me.mp3"></audio>
 
       <div class="card" onclick="openLightbox(this)">
-        <img class="card-art" src="C2.png" alt="Care For Me" />
+        <img class="card-art" src="C2.png" alt="Ewiase Ye Sum" />
         <div class="card-info">
           <div>
             <div class="card-title">Ewiase ye sum<br>
@@ -399,6 +399,39 @@
           </div>
         </div>
       </div>
+
+      <div class="card" onclick="openLightbox(this)">
+        <img class="card-art" src="C8.png" alt="Gold-Digga" />
+        <div class="card-info">
+          <div>
+            <div class="card-title">Gold-Digga<br>
+            (Coming Soon)</div>
+            <div class="card-meta">Single &nbsp;·&nbsp; 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="openLightbox(this)">
+        <img class="card-art" src="C5.png" alt="This Side" />
+        <div class="card-info">
+          <div>
+            <div class="card-title">This Side<br>
+            (Coming Soon)</div>
+            <div class="card-meta">Single &nbsp;·&nbsp; 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="openLightbox(this)">
+        <img class="card-art" src="C6.png" alt="Aseda" />
+        <div class="card-info">
+          <div>
+            <div class="card-title">Aseda<br>
+            (Coming Soon)</div>
+            <div class="card-meta">Single &nbsp;·&nbsp; 2027</div>
+          </div>
+        </div>
+      </div>
       
       <div class="card" onclick="openLightbox(this)">
         <img class="card-art" src="C1.png" alt="Watch No Man" />
@@ -406,6 +439,79 @@
           <div>
             <div class="card-title">Watch No Man<br>
             (Coming soon)</div>
+            <div class="card-meta">Single &nbsp;·&nbsp; 2027</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" onclick="openLightbox(this)">
+        <img class="card-art" src="C7.png" alt="The Journey" />
+        <div class="card-info">
+          <div>
+            <div class="card-title">The Journey<br>
+            (Coming Soon)</div>
+            <div class="card-meta">Single &nbsp;·&nbsp; 2027</div>
+          </div>
+        </div>
+      </div>
+
+
+  </section>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">×</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <footer>
+    <div>
+      <div class="gold-line"></div>
+      <p>© 2026 Tech Amera · All rights reserved</p>
+    </div>
+    <p>Parental Advisory — Explicit Content</p>
+  </footer>
+
+  <script>
+    const audio = document.getElementById('careAudio');
+    const playBtn = document.getElementById('playBtn');
+    const playIcon = document.getElementById('playIcon');
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+        playIcon.className = 'fa-solid fa-pause';
+        playBtn.classList.add('playing');
+      } else {
+        audio.pause();
+        playIcon.className = 'fa-solid fa-play';
+        playBtn.classList.remove('playing');
+      }
+    }
+
+    audio.addEventListener('ended', () => {
+      playIcon.className = 'fa-solid fa-play';
+      playBtn.classList.remove('playing');
+    });
+
+    function openLightbox(card) {
+      const img = card.querySelector('.card-art');
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox-img').alt = img.alt;
+      document.getElementById('lightbox').classList.add('open');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+
+</body>
+</html>
+>
             <div class="card-meta">Single &nbsp;·&nbsp; 2026</div>
           </div>
         </div>
